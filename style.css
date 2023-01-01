@@ -23,7 +23,7 @@ form > input {
 form > select {
   height: 3em;
   width: 50vw;
-  padding: 0 1em;
+  padding: 0 1em ;
   background: #1F293A;
   color: #D1D5DB;
 }
@@ -46,5 +46,16 @@ main {
 }
 
 .color {
-  height: 80vh;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background: green;
+}
+
+.color > h4 {
+  height: 2em;
+  width: 100%;
+  background: #1F2937;
 }
