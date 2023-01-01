@@ -1,15 +1,35 @@
 const colorsGrid = document.getElementById('colors-grid')
+const form = document.getElementById('form')
 
-fetch('https://www.thecolorapi.com/scheme?hex=00ff00&mode=monochrome')
-  .then(res => res.json())
-  .then(data => {
-    let gridHtml = ''
-    data.colors.map((item) => {
-      gridHtml += `
-      <div class="color" style="background: ${item.hex.value}">
-      <h4>${item.hex.value}</h4>
-      </div>
-      `
+let colorsArray = [
+  '#F55A5A', '#2B283A', '#FBF3AB', '#AAD1B6', '#A626D3'
+]
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const seed = e.target.color.value.replace('#', '')
+  const mode = e.target.mode.value
+  colorsArray = []
+  fetch(`https://www.thecolorapi.com/scheme?hex=${seed}&mode=${mode}`)
+    .then(res => res.json())
+    .then(data => {
+      data.colors.map((item) => {
+        colorsArray.push(item.hex.value)
+      })
+      render()
     })
-    colorsGrid.innerHTML = gridHtml;
+})
+
+function render() {
+  let gridHtml = ''
+  colorsArray.map((color) => {
+    gridHtml += `
+    <div class="color" style="background: ${color}">
+    <h4>${color}</h4>
+    </div>
+    `
   })
+  colorsGrid.innerHTML = gridHtml;
+}
+
+render()
