@@ -20,16 +20,30 @@ form.addEventListener('submit', (e) => {
     })
 })
 
+document.addEventListener('click', (e) => {
+    if(e.target.dataset.hex) {
+      navigator.clipboard.writeText(e.target.dataset.hex)
+      document.getElementById('copyModal').style.display = 'block'
+      setTimeout(() => {
+        document.getElementById('copyModal').style.display = 'none'
+      },2000)
+    }
+})
+
 function render() {
   let gridHtml = ''
   colorsArray.map((color) => {
     gridHtml += `
-    <div class="color" style="background: ${color}">
+    <div class="color" data-hex=${color} style="background: ${color}">
     <h4>${color}</h4>
     </div>
     `
   })
   colorsGrid.innerHTML = gridHtml;
+  document.getElementById('infoModal').style.display = 'block'
+      setTimeout(() => {
+        document.getElementById('infoModal').style.display = 'none'
+      },2000)
 }
 
 render()
