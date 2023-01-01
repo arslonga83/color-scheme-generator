@@ -66,6 +66,21 @@ main {
   background: #1F2937;
 }
 
+.info-modal, .copy-modal {
+  display: none;
+  position: absolute;
+  top: 45%;
+  left: 33%;
+  padding: 2em;
+  background: #3D4B60;
+  color: white;
+  font-weight: bold;
+}
+
+.copy-modal {
+  left: 44%;
+}
+
 @media(min-width: 500px) {
   form {
     padding: 1em;
