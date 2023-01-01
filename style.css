@@ -6,6 +6,7 @@
 body {
   background: #1F2937;
   color: white;
+  font-family: 'Inter', sans-serif;
 }
 
 form {
@@ -26,6 +27,7 @@ form > select {
   padding: 0 1em ;
   background: #1F293A;
   color: #D1D5DB;
+  font-family: inherit;
 }
 
 form > button {
@@ -37,6 +39,7 @@ form > button {
   border: 1px solid black;
   background: #3D4B60;
   color: white;
+  font-family: inherit;
 }
 
 main {
