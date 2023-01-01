@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -11,9 +12,9 @@ body {
 
 form {
   height: 10vh;
-  padding: 1em;
+  padding: 0.5em;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -23,7 +24,7 @@ form > input {
 
 form > select {
   height: 3em;
-  width: 50vw;
+  width: 40vw;
   padding: 0 1em ;
   background: #1F293A;
   color: #D1D5DB;
@@ -32,7 +33,7 @@ form > select {
 
 form > button {
   height: 3em;
-  padding: 1em 2em;
+  padding: 0.5em 1em;
   display: flex;
   align-items: center;
   background: white;
@@ -60,6 +61,18 @@ main {
 .color > h4 {
   height: 2em;
   width: 100%;
-  padding: 1.5em;
+  padding: 1em 0 2em 0;
+  font-size: .75rem;
   background: #1F2937;
+}
+
+@media(min-width: 500px) {
+  form {
+    padding: 1em;
+    justify-content: space-around;
+  }
+
+  .color > h4 {
+    font-size: 1rem;
+  }
 }
