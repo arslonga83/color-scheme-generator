@@ -69,16 +69,14 @@ main {
 .info-modal, .copy-modal {
   display: none;
   position: absolute;
-  top: 45%;
-  left: 33%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /*this makes the middle of the div the center point*/
   padding: 2em;
   background: #3D4B60;
+  border: 1px solid white;
   color: white;
   font-weight: bold;
-}
-
-.copy-modal {
-  left: 44%;
 }
 
 @media(min-width: 500px) {
